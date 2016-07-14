@@ -1,0 +1,42 @@
+@import 'variables';
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+.data-from-localstorage-fallback{
+	display:none;
+}
+.no-localstorage{
+	.data-from-localstorage-fallback {
+	 display:block;
+	}
+	.data-from-localstorage {
+		display:none;
+	}
+}
+
+.border-radius {
+	width:200px;
+	height:200px;
+	background-color:#ccc;
+	border-radius: 50%;
+	text-align:center;
+}
+
+label{
+	font-size:32px;
+	line-height: 200px;
+	color : #fff;
+}
+
+.red {
+	.border-radius {
+		background-color:red;
+	}
+}
+.blue {
+	.border-radius {
+		background-color:blue;
+	}
+}

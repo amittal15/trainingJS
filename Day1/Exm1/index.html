@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connectivity</title>
+</head>
+<body>
+	<h2>Connectivity</h2>
+	<p>Status:
+		<label id='status'></label>
+	</p>
+	<script type="text/javascript">
+		function updateOnLineStatus() {
+			var condition = navigator.onLine ? 'online' : 'offline';
+			console.log(condition);
+			document.querySelector('#status').innerHTML = condition;
+		}
+		window.addEventListener('onLine', updateOnLineStatus);
+		window.addEventListener('offLine',updateOnLineStatus);
+		// init on Page Load
+		updateOnLineStatus();
+	</script>
+</body>
+</html>

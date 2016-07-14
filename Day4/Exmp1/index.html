@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="TodoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+    <script src= "app.js" type="text/javascript"></script>
+    <style type="text/css">
+      .ng-invalid {
+        border-right: solid red;
+      }
+      .ng-valid {
+        border-right: solid green;
+      }
+      .strike {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body class = "container">
+  <h1 class="text-center" ng-controller='HeaderCtrl'>Todo APP({{todos.length}})</h1>
+  <div ng-controller='AppCtrl'>
+   <form name="myForm">
+    <input type="text" name="text" class="form-control" ng-model="todoText" ng-keypress="createTodo($event)" placeholder="Enter what you want to do" required>
+    <label ng-show="myForm.text.$invalid">text is required</label>
+  
+  </form>
+
+  <div class="row" ng-repeat="todo in todos">
+    
+    <div ng-hide="todo.isEditMode">
+    <div class="col-sm-1">
+    <input type="checkbox" ng-model="todo.isCompleted" class="form-control" ng-click="saveTodo(todo)">
+    </div>
+  
+    <div class="col-sm-7">
+      <label ng-class="{strike : todo.isCompleted}">{{todo.text}}</label>
+    </div>
+      <input type="button" class="btn btn-primary" value="Edit" ng-click="editTodo(todo)" ng-disabled="todo.isCompleted">
+      <input type="button" class="btn btn-danger" value="Delete" ng-click="deleteTodo($index, todo)">
+    </div>
+    <div ng-hide="!todo.isEditMode">
+      <div> <input type="text" class="form-control" ng-model="todo.text">
+      </div>
+      <div><input type="button" class="btn btn-info" value="Save" ng-click="saveTodo(todo)">
+      </div>
+      
+    </div>
+   </div>
+   </div></div> 
+  </body>
+</html>

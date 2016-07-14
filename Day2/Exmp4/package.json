@@ -1,0 +1,23 @@
+{
+  "name": "node-training",
+  "version": "1.0.0",
+  "description": "This is Node Training",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "This",
+    "is",
+    "training"
+  ],
+  "author": "Ankur Mittal",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-uglify": "^1.0.1",
+    "my-calc-app": "^0.2.0"
+  },
+  "dependencies": {
+    "grunt": "1.0.1"
+  }
+}
